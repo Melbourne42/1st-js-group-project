@@ -28,29 +28,26 @@
         <div>
           <h1 class="h1">Регистрация</h1>
         </div>
-        <div class="reg_field">
+        <div class="reg_field" id="name_input">
           <label for="username" class="label">Имя пользователя</label>
-          <input type="text" class="input" id="username" required />
-          <div id="error1" class="error"></div>
+          <input type="text" class="input" id="username" required placeholder="Логин" />
         </div>
-        <div class="reg_field">
+        <div class="reg_field" id="email_input">
           <label for="email" class="label">Адрес электронной почты</label>
-          <input type="text" class="input" pattern="/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i" id="email" required />
-          <div id="error2" class="error"></div>
+          <input type="text" class="input" pattern="/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i" id="email" required
+            placeholder="Электронная почта" />
         </div>
-        <div class="password_container">
+        <div class="password_container" id="password_input">
           <label for="password" class="reg_field label">Пароль</label>
-          <input type="password"
+          <input type="password" placeholder="Пароль"
             pattern="/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}$/" class="input"
             id="password1" required />
-          <div id="error3" class="error"></div>
         </div>
-        <div class="reg_field">
+        <div class="reg_field" id="repet_password_input">
           <label for="repeat_password" class="label">Повторите пароль ещё раз</label>
           <input type="password" class="input"
             pattern="/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}$/"
-            id="password2" required />
-          <div id="error4" class="error"></div>
+            id="password2" required placeholder="Повторите пароль" />
         </div>
         <button id="button" class="button" onclick="checkInputs()">
           Зарегистрироваться
@@ -66,52 +63,63 @@
   <script>
     let error = false;
     function checkInputs() {
+      const userInput = document.getElementById("name_input");
       const username = document.getElementById("username").value;
       const email = document.getElementById("email").value;
+      const emailInput = document.getElementById("email_input");
       const password1 = document.getElementById("password1").value;
+      const password1Input = document.getElementById("password_input");
+      const repeatInput = document.getElementById("repet_password_input");
       const password2 = document.getElementById("password2").value;
       if (username === "") {
-        document.getElementById("error1").innerHTML = "Заполните поле!";
+        const error1 = document.createElement('div');
+        const error1text = document.createTextNode('Заполните поле!');
+        error1.appendChild(error1text);
+        userInput.appendChild(error1);
         error = true;
       } else {
-        document.getElementById("error1").innerHTML = "";
         error = false;
       }
       if (email === "") {
-        document.getElementById("error2").innerHTML = "Заполните поле!";
+        const error2 = document.createElement('div');
+        const error2text = document.createTextNode('Заполните поле!');
+        error2.appendChild(error2text);
+        emailInput.appendChild(error2);
         error = true;
       } else {
-        document.getElementById("error2").innerHTML = "";
+        const error2 = document.createElement('div');
+        const error2text = document.createTextNode('');
+        error2.appendChild(error2text);
+        emailInput.appendChild(error2);
         error = false;
       }
       if (password1 === "") {
-        document.getElementById("error3").innerHTML = "Заполните поле!";
-        error = true;
-      } else if (password1.length <= 4) {
-        document.getElementById("error3").innerHTML =
-          "В пароле должно быть больше 4 символов";
-        error = true;
-      } else if (password1 !== password2) {
-        document.getElementById("error4").innerHTML = "Пароли не совпадают!";
+        const error3 = document.createElement('div');
+        const error3text = document.createTextNode('Заполните поле!');
+        error3.appendChild(error3text);
+        password1Input.appendChild(error3);
         error = true;
       } else {
-        document.getElementById("error3").innerHTML = "";
         error = false;
       }
       if (password2 === "") {
-        document.getElementById("error4").innerHTML = "Заполните поле!";
-        error = true;
-      } else if (password1 !== password2) {
-        document.getElementById("error4").innerHTML = "Пароли не совпадают!";
+        const error4 = document.createElement('div');
+        const error4text = document.createTextNode('Заполните поле!');
+        error4.appendChild(error4text);
+        repeatInput.appendChild(error4);
         error = true;
       } else {
-        document.getElementById("error4").innerHTML = "";
         error = false;
       }
-      if (!error) {
-        document.getElementById(
-          "welcome"
-        ).innerHTML = `Добро пожаловать, ${username}!`;
+      if (password1 !== password2) {
+        const error5 = document.createElement('div');
+        const error5text = document.createTextNode('Пароли не совпадают!');
+        error5.appendChild(error5text);
+        repeatInput.appendChild(error5);
+        error = true;
+      }
+      else {
+        error = false
       }
     }
   </script>
