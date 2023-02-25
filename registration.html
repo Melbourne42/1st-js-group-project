@@ -1,81 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alegreya&family=Amatic+SC&family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/style/registration.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="general_container">
-      <div class="container3">
-        <aside class="rectangle">
-          <img src="assets/home.svg" alt="home" class="img" />
-          <img src="assets/profile.svg" alt="profile" class="img" />
-          <img src="assets/exit.svg" alt="exit" class="img" />
-        </aside>
-        <div class="pokemon__left">
-          <img src="assets/avatar3.svg" alt="pokemon" class="pokemon" />
-        </div>
-        <div class="container">
-          <div>
-            <h1 class="h1">Регистрация</h1>
-          </div>
-          <div class="reg_field">
-            <label for="username" class="label">Имя пользователя</label>
-            <input type="text" class="input" id="username" required />
-            <div id="error1" class="error"></div>
-          </div>
-          <div class="reg_field">
-            <label for="email" class="label">Адрес электронной почты</label>
-            <input
-              type="text"
-              class="input"
-              pattern="/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i"
-              id="email"
-              required
-            />
-            <div id="error2" class="error"></div>
-          </div>
-          <div class="password_container">
-            <label for="password" class="reg_field label">Пароль</label>
-            <input
-              type="password"
-              pattern="/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}$/"
-              class="input"
-              id="password1"
-              required
-            />
-            <div id="error3" class="error"></div>
-          </div>
-          <div class="reg_field">
-            <label for="repeat_password" class="label"
-              >Повторите пароль ещё раз</label
-            >
-            <input
-              type="password"
-              class="input"
-              pattern="/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}$/"
-              id="password2"
-              required
-            />
-            <div id="error4" class="error"></div>
-          </div>
-          <button id="button" class="button">Зарегистрироваться</button>
-          <div id="errorsInfo"></div>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Amatic+SC&family=Roboto&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style/registration.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="general_container">
+    <div class="container3">
+      <aside class="rectangle">
+        <img src="assets/home.svg" alt="home" class="img" />
+        <img src="assets/profile.svg" alt="profile" class="img" />
+        <img src="assets/exit.svg" alt="exit" class="img" />
+      </aside>
+      <div class="pokemon__left">
+        <img src="assets/avatar3.svg" alt="pokemon" class="pokemon" />
       </div>
-      <div class="container__img">
-        <img src="assets/avatar2.svg" alt="pokemon" class="pokemon" />
-        <img src="assets/avatar4.svg" alt="pokemon" class="pokemon" />
+      <div class="container">
+        <div>
+          <h1 class="h1">Регистрация</h1>
+        </div>
+        <div class="reg_field" id="name_input">
+          <label for="username" class="label">Имя пользователя</label>
+          <input type="text" class="input" id="username" required placeholder="Логин" />
+        </div>
+        <div class="reg_field" id="email_input">
+          <label for="email" class="label">Адрес электронной почты</label>
+          <input type="text" class="input" pattern="[\w\.-]+@[\w\.-]+\.\w{2,4}" id="email" required
+            placeholder="Электронная почта" />
+        </div>
+        <div class="password_container" id="password_input">
+          <label for="password" class="reg_field label">Пароль</label>
+          <input type="password" placeholder="Пароль" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+            class="input" id="password" required min="8" />
+        </div>
+        <div class="reg_field" id="repeat_password_input">
+          <label for="repeat_password" class="label">Повторите пароль ещё раз</label>
+          <input type="password" class="input" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+            id="repeatPassword" required placeholder="Повторите пароль" min="8" />
+        </div>
+        <button id="button" class="button">
+          Зарегистрироваться
+        </button>
       </div>
     </div>
-  </body>
+    <div class="container__img">
+      <img src="assets/avatar2.svg" alt="pokemon" class="pokemon" />
+      <img src="assets/avatar4.svg" alt="pokemon" class="pokemon" />
+    </div>
+  </div>
+  <script src="assets/js/registration.js">
+  </script>
+</body>
+
 </html>
