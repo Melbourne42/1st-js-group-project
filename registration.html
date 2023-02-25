@@ -34,22 +34,20 @@
         </div>
         <div class="reg_field" id="email_input">
           <label for="email" class="label">Адрес электронной почты</label>
-          <input type="text" class="input" pattern="/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i" id="email" required
+          <input type="text" class="input" pattern="[\w\.-]+@[\w\.-]+\.\w{2,4}" id="email" required
             placeholder="Электронная почта" />
         </div>
         <div class="password_container" id="password_input">
           <label for="password" class="reg_field label">Пароль</label>
-          <input type="password" placeholder="Пароль"
-            pattern="/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}$/" class="input"
-            id="password1" required />
+          <input type="password" placeholder="Пароль" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+            class="input" id="password" required min="8" />
         </div>
-        <div class="reg_field" id="repet_password_input">
+        <div class="reg_field" id="repeat_password_input">
           <label for="repeat_password" class="label">Повторите пароль ещё раз</label>
-          <input type="password" class="input"
-            pattern="/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}$/"
-            id="password2" required placeholder="Повторите пароль" />
+          <input type="password" class="input" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+            id="repeatPassword" required placeholder="Повторите пароль" min="8" />
         </div>
-        <button id="button" class="button" onclick="checkInputs()">
+        <button id="button" class="button">
           Зарегистрироваться
         </button>
       </div>
@@ -59,104 +57,7 @@
       <img src="assets/avatar4.svg" alt="pokemon" class="pokemon" />
     </div>
   </div>
-  <script>
-    let error = false;
-    function checkInputs() {
-      const userInput = document.getElementById("name_input");
-      const username = document.getElementById("username").value;
-      const email = document.getElementById("email").value;
-      const emailInput = document.getElementById("email_input");
-      const password1 = document.getElementById("password1").value;
-      const password1Input = document.getElementById("password_input");
-      const repeatInput = document.getElementById("repet_password_input");
-      const password2 = document.getElementById("password2").value;
-      const error1 = document.getElementById('errorId');
-      const error2 = document.getElementById('errorMail');
-      const error3 = document.getElementById('errorPassword');
-      const error4 = document.getElementById('errorRepeatPassword');
-      const error5 = document.getElementById('samePassword');
-      checkUsername()
-      checkEmail()
-      checkPassword()
-      checkRepeat()
-      checkSamePassword()
-    }
-    function checkUsername() {
-      if (error1) {
-        userInput.removeChild(error1);
-      }
-      if (username === "") {
-        const error1 = document.createElement('div');
-        const error1text = document.createTextNode('Заполните поле!');
-        error1.id = 'errorId'
-        error1.appendChild(error1text);
-        userInput.appendChild(error1);
-        error = true;
-      } else {
-        error = false;
-      }
-    }
-    function checkEmail() {
-      if (error2) {
-        emailInput.removeChild(error2);
-      }
-      if (email === "") {
-        const error2 = document.createElement('div');
-        const error2text = document.createTextNode('Заполните поле!');
-        error2.id = 'errorMail';
-        error2.appendChild(error2text);
-        emailInput.appendChild(error2);
-        error = true;
-      } else {
-        error = false;
-      }
-    }
-    function checkPassword() {
-      if (error3) {
-        password1Input.removeChild(error3);
-      }
-      if (password1 === "") {
-        const error3 = document.createElement('div');
-        const error3text = document.createTextNode('Заполните поле!');
-        error3.id = 'errorPassword'
-        error3.appendChild(error3text);
-        password1Input.appendChild(error3);
-        error = true;
-      } else {
-        error = false;
-      }
-    }
-    function checkRepeat() {
-      if (error4) {
-        repeatInput.removeChild(error4);
-      }
-      if (password2 === "") {
-        const error4 = document.createElement('div');
-        const error4text = document.createTextNode('Заполните поле!');
-        error4.id = 'errorRepeatPassword'
-        error4.appendChild(error4text);
-        repeatInput.appendChild(error4);
-        error = true;
-      } else {
-        error = false;
-      }
-    }
-    function checkSamePassword() {
-      if (error5) {
-        repeatInput.removeChild(error5);
-      }
-      if (password1 !== password2) {
-        const error5 = document.createElement('div');
-        const error5text = document.createTextNode('Пароли не совпадают!');
-        error5.id = 'samePassword'
-        error5.appendChild(error5text);
-        repeatInput.appendChild(error5);
-        error = true;
-      }
-      else {
-        error = false
-      }
-    }
+  <script src="assets/js/registration.js">
   </script>
 </body>
 
