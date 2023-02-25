@@ -52,7 +52,6 @@
         <button id="button" class="button" onclick="checkInputs()">
           Зарегистрироваться
         </button>
-        <div id="errorsInfo"></div>
       </div>
     </div>
     <div class="container__img">
@@ -71,49 +70,85 @@
       const password1Input = document.getElementById("password_input");
       const repeatInput = document.getElementById("repet_password_input");
       const password2 = document.getElementById("password2").value;
+      const error1 = document.getElementById('errorId');
+      const error2 = document.getElementById('errorMail');
+      const error3 = document.getElementById('errorPassword');
+      const error4 = document.getElementById('errorRepeatPassword');
+      const error5 = document.getElementById('samePassword');
+      checkUsername()
+      checkEmail()
+      checkPassword()
+      checkRepeat()
+      checkSamePassword()
+    }
+    function checkUsername() {
+      if (error1) {
+        userInput.removeChild(error1);
+      }
       if (username === "") {
         const error1 = document.createElement('div');
         const error1text = document.createTextNode('Заполните поле!');
+        error1.id = 'errorId'
         error1.appendChild(error1text);
         userInput.appendChild(error1);
         error = true;
       } else {
         error = false;
       }
+    }
+    function checkEmail() {
+      if (error2) {
+        emailInput.removeChild(error2);
+      }
       if (email === "") {
         const error2 = document.createElement('div');
         const error2text = document.createTextNode('Заполните поле!');
+        error2.id = 'errorMail';
         error2.appendChild(error2text);
         emailInput.appendChild(error2);
         error = true;
       } else {
-        const error2 = document.createElement('div');
-        const error2text = document.createTextNode('');
-        error2.appendChild(error2text);
-        emailInput.appendChild(error2);
         error = false;
+      }
+    }
+    function checkPassword() {
+      if (error3) {
+        password1Input.removeChild(error3);
       }
       if (password1 === "") {
         const error3 = document.createElement('div');
         const error3text = document.createTextNode('Заполните поле!');
+        error3.id = 'errorPassword'
         error3.appendChild(error3text);
         password1Input.appendChild(error3);
         error = true;
       } else {
         error = false;
       }
+    }
+    function checkRepeat() {
+      if (error4) {
+        repeatInput.removeChild(error4);
+      }
       if (password2 === "") {
         const error4 = document.createElement('div');
         const error4text = document.createTextNode('Заполните поле!');
+        error4.id = 'errorRepeatPassword'
         error4.appendChild(error4text);
         repeatInput.appendChild(error4);
         error = true;
       } else {
         error = false;
       }
+    }
+    function checkSamePassword() {
+      if (error5) {
+        repeatInput.removeChild(error5);
+      }
       if (password1 !== password2) {
         const error5 = document.createElement('div');
         const error5text = document.createTextNode('Пароли не совпадают!');
+        error5.id = 'samePassword'
         error5.appendChild(error5text);
         repeatInput.appendChild(error5);
         error = true;
