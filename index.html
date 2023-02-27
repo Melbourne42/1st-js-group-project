@@ -1,112 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alegreya&family=Amatic+SC&family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/style/style.css" />
-    <link rel="stylesheet" href="assets/style/header.css" />
-  </head>
 
-  <body>
-    <aside class="rectangle">
-      <img src="assets/img/home.svg" alt="home" class="img" />
-      <img src="assets/img/profile.svg" alt="profile" class="img" />
-      <img src="assets/img/exit.svg" alt="exit" class="img" />
-    </aside>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Amatic+SC&family=Roboto&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style/style.css" />
+  <link rel="stylesheet" href="assets/style/header.css" />
+</head>
 
-    <div class="main_container">
-      <div class="header_container">
-        <div class="welcome_container">
-          <div class="welcome_text">
-            Привет,
-            <p id="username_header" for="username_header"></p>
-            <div class="welcome_text_content">Приятно видеть вас снова</div>
-          </div>
+<body>
+  <aside class="rectangle">
+    <img src="assets/img/home.svg" alt="home" class="img" />
+    <img src="assets/img/profile.svg" alt="profile" class="img" />
+    <img src="assets/img/exit.svg" alt="exit" class="img" />
+  </aside>
 
-          <img
-            class="header_illustration"
-            src="assets/img/Illustration.png"
-            alt="illustration"
-          />
+  <div class="main_container">
+    <div class="header_container">
+      <div class="welcome_container">
+        <div class="welcome_text">
+          Привет,
+          <p id="username_header" for="username_header"></p>
+          <div class="welcome_text_content">Приятно видеть вас снова</div>
         </div>
 
-        <div class="icon_container">
-          <img
-            class="icons_header"
-            src="assets/img/avatar(1)1.svg"
-            alt="icon-pikachu"
-          />
-          <img
-            class="icons_header"
-            src="assets/img/gaming1.svg"
-            alt="icon-ball"
-          />
-          <img
-            class="icons_header"
-            src="assets/img/avatar1.svg"
-            alt="icon-cat"
-          />
-        </div>
+        <img class="header_illustration" src="assets/img/Illustration.png" alt="illustration" />
       </div>
 
-      <div class="input_wrap">
-        <div class="input_inner">
-          <label class="label_input" for="pokemonName"
-            >Введи имя покемона</label
-          >
-          <input id="pokemonName" class="input" type="text" />
-        </div>
-        <button class="button">Создать</button>
-      </div>
-      <div class="table_inner">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Покемон</th>
-              <th>Рост</th>
-              <th>Вес</th>
-              <th>Способность</th>
-              <th>Картинка</th>
-            </tr>
-          </thead>
-          <tbody id="tableAppendChild">
-            <tr class="grey_tr">
-              <td>clefairy</td>
-              <td>6</td>
-              <td>75</td>
-              <td>friend-guard</td>
-              <td class="pokemon_pic">
-                <img
-                  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/35.png"
-                  alt="clefairy"
-                />
-              </td>
-            </tr>
-            <tr class="grey_tr">
-              <td>pikachu</td>
-              <td>4</td>
-              <td>60</td>
-              <td>lightning-rod</td>
-              <td class="pokemon_pic">
-                <img
-                  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
-                  alt="pikachu"
-                />
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="icon_container">
+        <img class="icons_header" src="assets/img/avatar(1)1.svg" alt="icon-pikachu" />
+        <img class="icons_header" src="assets/img/gaming1.svg" alt="icon-ball" />
+        <img class="icons_header" src="assets/img/avatar1.svg" alt="icon-cat" />
       </div>
     </div>
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/registration.js"></script>
-  </body>
+
+    <div class="input_wrap">
+      <div class="input_inner">
+        <label class="label_input" for="pokemonName">Введи имя покемона</label>
+        <input id="pokemonName" class="input" type="text" />
+      </div>
+      <button class="button">Создать</button>
+    </div>
+    <div class="table_inner">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Покемон</th>
+            <th>Рост</th>
+            <th>Вес</th>
+            <th>Способность</th>
+            <th>Картинка</th>
+          </tr>
+        </thead>
+        <tbody id="tableAppendChild">
+          <tr class="grey_tr">
+            <td>clefairy</td>
+            <td>6</td>
+            <td>75</td>
+            <td>friend-guard</td>
+            <td class="pokemon_pic">
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/35.png"
+                alt="clefairy" />
+            </td>
+          </tr>
+          <tr class="grey_tr">
+            <td>pikachu</td>
+            <td>4</td>
+            <td>60</td>
+            <td>lightning-rod</td>
+            <td class="pokemon_pic">
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+                alt="pikachu" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="assets/js/script.js"></script>
+</body>
+
 </html>
