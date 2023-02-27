@@ -107,3 +107,5 @@ function checkValidity(input, errorId, errorInput) {
 document
     .getElementById("button")
     .addEventListener("click", () => checkInputs());
+
+

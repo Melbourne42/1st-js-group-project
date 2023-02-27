@@ -1,3 +1,9 @@
+
+
+    window.onload = function () {
+        document.getElementById("username_header").textContent = JSON.parse(localStorage.getItem('userdata'))['username']
+      };
+
 'use strict';
 //добавление покемонов
 const btn = document.querySelector('.button');

@@ -1,6 +1,7 @@
 body {
     font-family: Roboto;
   }
+@media (max-width: 2440px) {
   .container3 {
     display: flex;
     width: 80vw;
@@ -95,3 +96,28 @@ body {
     height: 85vh;
     width: 30vh;
   }
+}
+@media (max-width: 780px) {
+  .rectangle{
+    display: none;
+  }
+  .img{
+    display: none;
+  }
+  .pokemon__left{
+    display: none;
+  }
+  .container__img{
+    display: none;
+  }
+  .general_container{
+    margin: auto;
+    text-align: center;
+  }
+  .input {
+    width: 300px;
+  }
+  .button {
+    width: 300px;
+  }
+}
