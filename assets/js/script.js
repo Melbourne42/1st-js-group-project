@@ -6,6 +6,7 @@ window.onload = function () {
 //добавление покемонов
 const btn = document.querySelector('.button');
 const pokemonUser = document.getElementById('pokemonName');
+let pokemonMassive = [];
 btn.addEventListener('click', function () {
     const pokemon = pokemonUser.value.toLowerCase();
     const tableAppendChild = document.getElementById('tableAppendChild');
@@ -46,6 +47,12 @@ btn.addEventListener('click', function () {
             createTdPic.appendChild(createPic);
             createTdPic.classList.add('pokemon_pic');
             createElTr.appendChild(createTdPic);
+            //сохранение в хранилище покемонов с данными
+            const pokemonUserSave = {pokemonName: pokemon, height: data.height, weight: data.weight, ability: data.abilities[0].ability.name, photo: data.sprites.front_default};
+            pokemonMassive.push(pokemonUserSave);
+            for (let i = 0; i < pokemonMassive.length; i++) {
+                localStorage.setItem(`${pokemon}`, JSON.stringify(pokemonMassive[i]))
+            }
         })
         .catch((err) => {
             alert('Покемон не найден или неправильно набрано имя');
