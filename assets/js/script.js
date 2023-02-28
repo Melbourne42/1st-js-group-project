@@ -8,6 +8,7 @@ window.onload = function () {
 //добавление покемонов
 const btn = document.querySelector('.button');
 const pokemonUser = document.getElementById('pokemonName');
+let pokemonMassive = [];
 btn.addEventListener('click', function () {
     const pokemon = pokemonUser.value.toLowerCase();
     const tableAppendChild = document.getElementById('tableAppendChild');
@@ -60,10 +61,12 @@ btn.addEventListener('click', function () {
                 console.log(err);
             })
     }
+    pokemonUser.value = '';
 })
 function clearStorage() {
     if (localStorage.getItem('userdata') !== null) {
         localStorage.removeItem('userdata');
+        localStorage.removeItem(`pokemonUserSave`);
         location.href = location.href;
     }
 }
