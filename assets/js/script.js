@@ -9,13 +9,13 @@ const pokemonUser = document.getElementById('pokemonName');
 btn.addEventListener('click', function () {
     const pokemon = pokemonUser.value.toLowerCase();
     const tableAppendChild = document.getElementById('tableAppendChild');
-    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-    .then((response) => response.json())
-    .then((data) => {
-        if (pokemonUser.value = ' ') {
-            alert('Поле пустое') 
-            return
-        } else {
+    if (!pokemonUser.value) {
+        alert('Поле пустое') 
+        return
+    } else {
+        fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+        .then((response) => response.json())
+        .then((data) => {
             const createElTr = document.createElement('tr');
             createElTr.classList.add('grey_tr');
             tableAppendChild.appendChild(createElTr);
@@ -46,11 +46,11 @@ btn.addEventListener('click', function () {
             createTdPic.appendChild(createPic);
             createTdPic.classList.add('pokemon_pic');
             createElTr.appendChild(createTdPic);
-        }
-    })
-    .catch((err) => {
-        alert('Покемон не найден или неправильно набрано имя');
-        console.log(err);
-    })
+        })
+        .catch((err) => {
+            alert('Покемон не найден или неправильно набрано имя');
+            console.log(err);
+        })
+    }
     pokemonUser.value = '';
 })
