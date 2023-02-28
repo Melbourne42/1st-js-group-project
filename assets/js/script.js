@@ -1,12 +1,12 @@
-'use strict';
 window.onload = function () {
-    document.getElementById("username_header").textContent = JSON.parse(localStorage.getItem('userdata'))['username']
-};
+    if (JSON.parse(localStorage.getItem('userdata'))==null){
+    window.location.href = 'registration.html'
+    } else {document.getElementById("username_header").textContent = JSON.parse(localStorage.getItem('userdata'))['username']}};
 
+'use strict';
 //добавление покемонов
 const btn = document.querySelector('.button');
 const pokemonUser = document.getElementById('pokemonName');
-let pokemonMassive = [];
 btn.addEventListener('click', function () {
     const pokemon = pokemonUser.value.toLowerCase();
     const tableAppendChild = document.getElementById('tableAppendChild');
@@ -59,7 +59,8 @@ btn.addEventListener('click', function () {
                 console.log(err);
             })
     }
-    pokemonUser.value = '';
+=======
+   ;
 })
 function clearStorage() {
     if (localStorage.getItem('userdata')) {
