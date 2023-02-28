@@ -61,11 +61,12 @@ btn.addEventListener('click', function () {
                 console.log(err);
             })
     }
+    pokemonUser.value = '';
 })
 function clearStorage() {
-    if (localStorage.getItem('userdata') && localStorage.getItem('htmlinner') !== null) {
+    if (localStorage.getItem('userdata') !== null) {
         localStorage.removeItem('userdata');
-        localStorage.removeItem('htmlinner');
+        localStorage.removeItem(`pokemonUserSave`);
         location.href = location.href;
     }
 }
