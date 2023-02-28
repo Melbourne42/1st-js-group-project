@@ -1,7 +1,8 @@
 window.onload = function () {
-    if (JSON.parse(localStorage.getItem('userdata'))==null){
-    window.location.href = 'registration.html'
-    } else {document.getElementById("username_header").textContent = JSON.parse(localStorage.getItem('userdata'))['username']}};
+    if (JSON.parse(localStorage.getItem('userdata')) == null) {
+        window.location.href = 'registration.html'
+    } else { document.getElementById("username_header").textContent = JSON.parse(localStorage.getItem('userdata'))['username'] }
+};
 
 'use strict';
 //добавление покемонов
@@ -59,8 +60,6 @@ btn.addEventListener('click', function () {
                 console.log(err);
             })
     }
-=======
-   ;
 })
 function clearStorage() {
     if (localStorage.getItem('userdata')) {
