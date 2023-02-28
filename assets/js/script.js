@@ -1,8 +1,8 @@
 
-
-    window.onload = function () {
-        document.getElementById("username_header").textContent = JSON.parse(localStorage.getItem('userdata'))['username']
-      };
+window.onload = function () {
+    if (JSON.parse(localStorage.getItem('userdata'))==null){
+        window.location.href = 'registration.html'
+    } else {document.getElementById("username_header").textContent = JSON.parse(localStorage.getItem('userdata'))['username']}};
 
 'use strict';
 //добавление покемонов
