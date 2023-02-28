@@ -20,7 +20,7 @@ function checkInputs() {
     checkRepeat(repeatInput, repeatPassword, repeatPasswordError);
     checkSamePassword(password, repeatPassword, repeatInput, errorSamePassword);
     if (!error && !errorMismatch.length) {
-        const userData = { username: username.value, email: email.value, password: password.value }
+        const userData = { username: username.value, email: email.value }
         localStorage.setItem('userdata', JSON.stringify(userData))
         window.location.href = 'index.html';
     }
