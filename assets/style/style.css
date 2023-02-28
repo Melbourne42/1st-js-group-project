@@ -2,6 +2,11 @@ body {
     font-family: Roboto;
 }
 
+.exit_button {
+    background-color: #0c0b0b;
+    border: none;
+}
+
 /* стилизация таблицы и импута */
 @media (max-width: 2440px) {
     .input_wrap {
@@ -9,15 +14,18 @@ body {
         justify-content: left;
         align-items: flex-end;
     }
+
     .input_inner {
         display: flex;
         flex-direction: column;
         width: 879px;
     }
+
     .label_input {
         font-weight: 400;
         font-size: 24px;
     }
+
     .input {
         flex-shrink: 1;
         height: 61px;
@@ -25,6 +33,7 @@ body {
         border-radius: 14px;
         font-size: 22px;
     }
+
     .button {
         width: 160px;
         height: 61px;
@@ -36,9 +45,11 @@ body {
         line-height: 0px;
         margin-left: 100px;
     }
+
     .table_inner {
         margin-top: 50px;
     }
+
     .table {
         width: 100%;
         font-weight: 400;
@@ -46,6 +57,7 @@ body {
         border-spacing: 0 20px;
         text-align: left;
     }
+
     .grey_tr {
         background: #F5F5F7;
         border-spacing: 0;
@@ -53,14 +65,17 @@ body {
         width: 1157px;
         height: 71px;
     }
+
     td:first-child {
         border-top-left-radius: 14px;
         border-bottom-left-radius: 14px;
     }
+
     td:last-child {
         border-top-right-radius: 14px;
         border-bottom-right-radius: 14px;
     }
+
     .pokemon_pic {
         width: 50px;
         height: 50px;
@@ -73,6 +88,7 @@ body {
         font-weight: 400;
         font-size: 24px;
     }
+
     .input {
         width: 200px;
         height: 61px;
@@ -80,6 +96,7 @@ body {
         border-radius: 14px;
         font-size: 22px;
     }
+
     .button {
         width: 160px;
         height: 61px;
@@ -90,10 +107,12 @@ body {
         font-size: 24px;
         line-height: 0px;
     }
+
     .table_inner {
         float: left;
         margin-top: 50px;
     }
+
     .table {
         float: left;
         gap: 10px;
@@ -102,20 +121,24 @@ body {
         font-size: 24px;
         border-spacing: 2 20px;
     }
+
     .grey_tr {
         background: #F5F5F7;
         border-spacing: 0;
         width: 250px;
         height: 71px;
     }
+
     td:first-child {
         border-top-left-radius: 14px;
         border-bottom-left-radius: 14px;
     }
+
     td:last-child {
         border-top-right-radius: 14px;
         border-bottom-right-radius: 14px;
     }
+
     .pokemon_pic {
         width: 50px;
         height: 50px;

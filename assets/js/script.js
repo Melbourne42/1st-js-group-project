@@ -1,4 +1,3 @@
-
 window.onload = function () {
     if (JSON.parse(localStorage.getItem('userdata'))==null){
         window.location.href = 'registration.html'
