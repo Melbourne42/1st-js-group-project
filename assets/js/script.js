@@ -62,8 +62,9 @@ btn.addEventListener('click', function () {
     }
 })
 function clearStorage() {
-    if (localStorage.getItem('userdata')) {
+    if (localStorage.getItem('userdata') !== null) {
         localStorage.removeItem('userdata');
+        location.href = location.href;
     }
 }
 document
