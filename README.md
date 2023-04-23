@@ -1,5 +1,5 @@
 # Дашборд покемонов
-<p>Дашборд с регистрацией и сохранением покемонов в локальное хранилище.</p>
+<p>Групповой проект. Дашборд с регистрацией и сохранением покемонов в локальное хранилище.</p>
 <div>
 <h2> Страница регистрации </h2>
 <img src="https://user-images.githubusercontent.com/111885198/233805402-c010bb2c-c117-41c9-9f0b-e0a8b526442a.png" />
@@ -15,3 +15,9 @@
 <h2>Боковая панель</h2>
 <img src="https://user-images.githubusercontent.com/111885198/233840903-13672f14-875a-468d-b39b-ed52fb6f88cf.jpg"/>
 <p>На всех страницах реализована боковая панель. По нажатию на первую иконку пользователя перебрасывает на главную страницу, при клике на вторую - на страницу регистрации, при нажатии на третью пользователь выходит из профиля, данные из Local Storage стираются, пользователь автоматически переходит на страницу регистрации.</p>
+<h2>Результат</h2>
+https://melbourne42.github.io/1st-js-group-project/
+<h2>Contributors</h2>
+<a href="https://github.com/Melbourne42/1st-js-group-project/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Melbourne42/1st-js-group-project" />
+</a>
